@@ -1,24 +1,25 @@
-def bubble_sort(array)
-
-swap=false
+def bubble_sort(list)
 
 loop do
+	swap=0
+	i=0
+	while i<list.length-1
 
-	1.upto(array.length) do |i|
-
-		if array[i] < array[i-1]
-			array[i], array[i-1]=array[i-1], array[i]
-			swap=true
+		if list[i+1] < list[i]
+			list[i], list[i+1]=list[i+1], list[i]
+			swap+=1
 		end
+
+		i+=1
 
 	end
 
-	break if swap==false
+	break if swap==0
 
 end
 
-array
+print list
 
 end
 
-bubble_sort([4,3,78,2,0,2])
+bubble_sort([4, 3, 78, 2, 0, 2])
